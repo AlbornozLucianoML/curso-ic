@@ -17,7 +17,7 @@ $ docker run -e 'ACCEPT_EULA=Y' --name sql-server -e 'SA_PASSWORD=Pa$$w0rd1' -p 
 Cear la base de datos (también se puede hacer desde algun cliente de babse de datos)
 
 ```sh
-$ docker exec -it sql-server /opt/mssql-tools/bin/sqlcmd \
+$ docker exec -it sql-server-ip /opt/mssql-tools/bin/sqlcmd \
    -S localhost -U SA -P 'Pa$$w0rd1' \
    -Q 'CREATE DATABASE demo'
 ```
