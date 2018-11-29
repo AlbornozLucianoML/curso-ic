@@ -11,6 +11,7 @@ pipeline {
          }
          post{
             always{
+                junit 'build/test-results/test/*.xml'
                 println "aca se exportan los resultados de los test unitarios"
             }
          }
@@ -29,6 +30,7 @@ pipeline {
            }
            post{
                always{
+                   junit 'build/test-results/test/*.xml'
                    println "aca se exportan los resultados de los test de aceptación"
                }
            }
