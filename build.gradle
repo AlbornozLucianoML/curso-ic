@@ -46,11 +46,8 @@ sourceSets {
 }
 
 task verify(type: Test) {
-
 	testClassesDirs = sourceSets.acceptanceTest.output.classesDirs
 	classpath = sourceSets.acceptanceTest.runtimeClasspath
-
-	dependsOn 'test'
 }
 
 def appVersion =  System.properties['appVersion']?:'0.0.1-SNAPSHOT'
@@ -95,7 +92,6 @@ dependencies {
 // ===== Docker
 
 import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
-import com.bmuschko.gradle.docker.tasks.image.DockerPushImage
 import com.bmuschko.gradle.docker.tasks.image.Dockerfile
 
 task createDockerfile(type: Dockerfile) {
